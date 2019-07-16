@@ -7,7 +7,12 @@ const TeamList = props => {
     <div>
       <h1>hi</h1>
       {props.teamMembers.map(person => (
-        <Team key={person.id} person={person} />
+        <Team
+          key={person.id}
+          person={person}
+          setEditTeamState={props.setEditTeamState}
+          setIsEditing={props.setIsEditing}
+        />
       ))}
     </div>
   );

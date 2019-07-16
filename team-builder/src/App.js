@@ -34,13 +34,23 @@ function App() {
   //   });
   // };
 
+  const [isEditing, setIsEditing] = useState(false);
+  const [editTeamState, setEditTeamState] = useState();
+
   return (
     <div className="App">
       <h1>hello</h1>
-      <TeamList teamMembers={teamState} />
+      <TeamList
+        teamMembers={teamState}
+        setEditTeamState={setEditTeamState}
+        setIsEditing={setIsEditing}
+      />
       <Form
         teamData={teamState}
         setTeamData={setTeamState}
+        editTeamState={editTeamState}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
         // submitHandler={submitHandler}
         // changeHandler={changeHandler}
       />

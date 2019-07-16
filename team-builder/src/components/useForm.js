@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export function useForm(intialState, cb) {
-  const [state, setState] = useState(intialState);
+export function useForm(initialState, cb) {
+  const [state, setState] = useState(initialState);
 
   function changeHandler(e) {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -10,7 +10,7 @@ export function useForm(intialState, cb) {
   function submitHandler(e) {
     e.preventDefault();
     cb();
-    setState(intialState);
+    setState(initialState);
   }
 
   return [state, changeHandler, submitHandler, setState];
