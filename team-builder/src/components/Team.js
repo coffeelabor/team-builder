@@ -4,7 +4,7 @@ const Team = props => {
   console.log("team props", props);
   const editPerson = () => {
     props.setIsEditing(true);
-    props.setEditTeamState(props);
+    props.setEditTeamState(props.person);
   };
   return (
     <div>
